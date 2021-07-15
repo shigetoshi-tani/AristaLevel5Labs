@@ -1,0 +1,13 @@
+---
+- hosts: left_leafs
+  gather_facts: no
+  tasks:
+  - name: upload mlag config
+    eos_config:
+      src: "/home/coder/project/labfiles/Ansible-Part2/configs/MLAG-left.cfg"
+- hosts: right_leafs
+  gather_facts: no
+  tasks:
+  - name: upload mlag config
+    eos_config:
+      src: "/home/coder/project/labfiles/Ansible-Part2/configs/MLAG-right.cfg"
